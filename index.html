@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+</head>
+<body>
+    <main>
+        <div class="todo-app">
+            <h1>TODO</h1>
+            <form id="todo-form">
+                <div>
+                    <input type="text" id="title" name="title" placeholder="Create a new todo..." required>
+                </div>
+                <div>
+                    <input type="text" id="date" name="date" placeholder="Due date..." required>
+                </div>
+                <div>
+                    <input type="submit" value="Add todo" name="Submit" class="btn-submit">          
+                </div> 
+            </form>
+            <div class="todo-categories">
+                <select class="js-example-basic-single" name="state" style="width: 100%;">
+                    <option>All</option>
+                    <option>Active</option>
+                    <option>Completed</option>
+                </select>
+            </div>
+            <div id="todos">
+               <div class="todo-item active">
+                    <label for="eat">
+                        <input id="eat" type="checkbox" name="todo">
+                        <div class="text">
+                            <h3>eat</h3>
+                            <p>9/1/2021</p>
+                        </div>
+                    </label>
+                    <button class="remove"></button>
+               </div>
+               <div class="todo-item active">
+                    <label for="sleep">
+                        <input id="sleep" type="checkbox" name="todo">
+                        <div class="text">
+                            <h3>sleep</h3>
+                            <p>9/1/2021</p>
+                        </div>
+                    </label>
+                    <button class="remove"></button>
+               </div>
+               <div class="todo-item active">
+                    <label for="repeat">
+                        <input id="repeat" type="checkbox" name="todo">
+                        <div class="text">
+                            <h3>repeat</h3>
+                            <p>9/1/2021</p>
+                        </div>
+                    </label>
+                    <button class="remove"></button>
+               </div>
+               
+            </div>
+            <p class="intructions">Drag and drop to reorder list</p>
+            <div class="identity">
+                <p>Nama : Muhammad Fauzan Reza Pahlevi</p>
+                <p>Kelas : 4D</p>
+                <P>NIM : 3201916108</P>
+            </div>
+        </div>
+    </main>
+    <script>
+        $(document).ready(function() {
+            // select2
+            $('.js-example-basic-single').select2();
+
+            // datepicker jquery ui widget
+            $( function() {
+                $( "#date" ).datepicker({
+                    changeMonth: true,
+                    changeYear: true
+                });
+            });
+
+            // sortable jquery ui widget
+            $( "#todos" ).sortable();
+            $("#todos").disableSelection();
+        });
+    </script>
+    <script src="js/dom.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

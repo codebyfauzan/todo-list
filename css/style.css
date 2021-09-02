@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+input,
+button {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.todo-app {
+    width: 500px;
+    max-width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.todo-app h1 {
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+}
+
+form input {
+    border: 1px solid #aaa;
+    padding: 4px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: white;
+}
+
+form div {
+    margin-bottom: 5px;
+}
+
+.todo-categories {
+    margin: 20px 0;
+}
+
+.todo-item {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-item label {
+    display: flex;
+    align-items: center;
+}
+
+.todo-item label input {
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.todo-item label .text {
+    text-align: left;
+}
+
+.todo-item label .text h3 {
+    font-weight: 400;
+}
+
+.todo-item label .text p {
+    color: #aaa;
+}
+
+.todo-item button {
+    border: none;
+    background-color: white;
+    color: #ccc;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    background: url('../img/x.svg');
+}
+
+#todos {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#todos .todo-item {
+    border-bottom: 1px solid #eee;
+    background-color: white;
+}
+
+#todos .todo-item:last-child {
+    border-bottom: none;
+}
+
+#todos .todo-item .done {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.identity {
+    margin-top: 40px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 15px 50px;
+    text-align: left;
+}
